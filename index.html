@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AirTrackBot</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+   <link rel="stylesheet" href="./src/css/output.css">
+</head>
+
+<body>
+   <!-- header-section -->
+   <header class="bg-white py-4 lg:py-6">
+      <div class="container mx-auto px-3">
+         <div class="flex justify-between items-center">
+            <!-- logo -->
+            <a href="#" class="">
+               <img src="./src/imgs/logo.png" alt="logo">
+            </a>
+            <!-- logo--end -->
+
+            <!-- header-right -->
+            <div class="flex justify-end gap-8">
+               <!-- header-nav -->
+               <ul class="hidden lg:flex gap-8 items-center">
+                  <li>
+                     <a href="" class="text-base text-[#232323] flex gap-1 items-center hover:text-blue-900">
+                        <span>
+                           <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#clip0_9_144)">
+                                 <path
+                                    d="M14.9671 16.2633C14.9671 16.49 14.8916 16.6694 14.7405 16.8017C14.5894 16.9339 14.4194 17 14.2305 17C14.0416 17 13.881 16.9339 13.7488 16.8017C13.6166 16.6694 13.5505 16.49 13.5505 16.2633C13.5505 15.5078 13.2671 14.8467 12.7005 14.28C12.1338 13.7133 11.4727 13.43 10.7171 13.43H6.46714C5.6738 13.43 5.00325 13.7133 4.45547 14.28C3.90769 14.8467 3.6338 15.5078 3.6338 16.2633C3.6338 16.49 3.55825 16.6694 3.40714 16.8017C3.25602 16.9339 3.08602 17 2.89714 17C2.70825 17 2.53825 16.9339 2.38714 16.8017C2.23602 16.6694 2.16047 16.49 2.16047 16.2633C2.19825 15.5078 2.40602 14.8089 2.7838 14.1667C3.16158 13.5244 3.67158 13.005 4.3138 12.6083C4.95602 12.2117 5.6738 12.0133 6.46714 12.0133H10.7171C11.4727 12.0133 12.1716 12.2117 12.8138 12.6083C13.456 13.005 13.9755 13.5244 14.3721 14.1667C14.7688 14.8089 14.9671 15.5078 14.9671 16.2633ZM15.6471 5.32667V6.74333C15.6471 7.04556 15.5432 7.29111 15.3355 7.48C15.1277 7.66889 14.8727 7.76333 14.5705 7.76333H14.2305C14.2305 8.55667 13.9566 9.22722 13.4088 9.775C12.861 10.3228 12.1905 10.5967 11.3971 10.5967H5.73047C4.93714 10.5967 4.26658 10.3228 3.7188 9.775C3.17102 9.22722 2.89714 8.55667 2.89714 7.76333H2.55714C2.25491 7.76333 1.99991 7.66889 1.79214 7.48C1.58436 7.29111 1.48047 7.04556 1.48047 6.74333V5.32667C1.48047 5.02444 1.58436 4.76944 1.79214 4.56167C1.99991 4.35389 2.25491 4.25 2.55714 4.25H2.89714C2.89714 3.45667 3.17102 2.78611 3.7188 2.23833C4.26658 1.69055 4.93714 1.41667 5.73047 1.41667H7.8838V0.68C7.8838 0.49111 7.94991 0.330555 8.08214 0.198334C8.21436 0.0661106 8.37491 0 8.5638 0C8.75269 0 8.92269 0.0661106 9.0738 0.198334C9.22491 0.330555 9.28158 0.49111 9.2438 0.68V1.41667H11.3971C12.1905 1.41667 12.861 1.69055 13.4088 2.23833C13.9566 2.78611 14.2305 3.45667 14.2305 4.25H14.5705C14.8727 4.25 15.1277 4.35389 15.3355 4.56167C15.5432 4.76944 15.6471 5.02444 15.6471 5.32667ZM12.8138 4.25C12.8138 3.87222 12.6721 3.54167 12.3888 3.25833C12.1055 2.975 11.7749 2.83333 11.3971 2.83333H5.73047C5.35269 2.83333 5.02214 2.975 4.7388 3.25833C4.45547 3.54167 4.3138 3.87222 4.3138 4.25V7.76333C4.3138 8.17889 4.45547 8.51889 4.7388 8.78333C5.02214 9.04778 5.35269 9.19889 5.73047 9.23667H11.3971C11.7749 9.19889 12.1055 9.04778 12.3888 8.78333C12.6721 8.51889 12.8138 8.19778 12.8138 7.82V4.25ZM6.80714 4.93C6.50491 4.96778 6.24991 5.08111 6.04214 5.27C5.83436 5.45889 5.73047 5.70444 5.73047 6.00667C5.73047 6.30889 5.83436 6.56389 6.04214 6.77167C6.24991 6.97944 6.50491 7.08333 6.80714 7.08333C7.10936 7.08333 7.36436 6.97944 7.57214 6.77167C7.77991 6.56389 7.87436 6.30889 7.85547 6.00667C7.83658 5.70444 7.73269 5.44944 7.5438 5.24167C7.35491 5.03389 7.10936 4.93 6.80714 4.93ZM10.3205 4.93C10.0182 4.96778 9.76325 5.08111 9.55547 5.27C9.34769 5.45889 9.25325 5.70444 9.27214 6.00667C9.29102 6.30889 9.39491 6.56389 9.5838 6.77167C9.77269 6.97944 10.0182 7.08333 10.3205 7.08333C10.6227 7.08333 10.8777 6.97944 11.0855 6.77167C11.2932 6.56389 11.3971 6.30889 11.3971 6.00667C11.3971 5.70444 11.2932 5.44944 11.0855 5.24167C10.8777 5.03389 10.6227 4.93 10.3205 4.93Z"
+                                    fill="#232323" />
+                              </g>
+                              <defs>
+                                 <clipPath id="clip0_9_144">
+                                    <rect width="17" height="17" fill="white"
+                                       transform="matrix(1 0 0 -1 0.0644531 17)" />
+                                 </clipPath>
+                              </defs>
+                           </svg>
+                        </span>
+                        Price Tracking Bot
+                     </a>
+                  </li>
+                  <li>
+                     <a href="" class="text-base text-[#232323] flex gap-1 items-center hover:text-blue-900">
+                        <span>
+                           <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#clip0_9_148)">
+                                 <path
+                                    d="M1.58042 10.9367L3.05375 11.9567C3.80931 12.4856 4.65931 12.75 5.60375 12.75C6.24597 12.75 6.86931 12.6178 7.47375 12.3533L16.5971 8.33C17.126 8.06556 17.4943 7.65944 17.7021 7.11167C17.9099 6.56389 17.891 6.02556 17.6454 5.49667C17.3999 4.96778 17.0032 4.59944 16.4554 4.39167C15.9076 4.18389 15.3693 4.19333 14.8404 4.42L12.6304 5.44L7.92708 2.55C7.62486 2.32333 7.27542 2.19111 6.87875 2.15333C6.48208 2.11555 6.11375 2.17222 5.77375 2.32333L5.20708 2.60667C4.98042 2.68222 4.80097 2.81444 4.66875 3.00333C4.53653 3.19222 4.45153 3.40944 4.41375 3.655C4.37597 3.90056 4.39486 4.13667 4.47042 4.36333C4.54597 4.59 4.67819 4.77889 4.86708 4.93L7.81375 7.53667L5.32042 8.67L3.11042 7.87667C2.77042 7.76333 2.42097 7.76333 2.06208 7.87667C1.70319 7.99 1.41042 8.17889 1.18375 8.44333C0.919306 8.82111 0.815417 9.25556 0.872083 9.74667C0.92875 10.2378 1.16486 10.6344 1.58042 10.9367ZM5.83042 3.85333L6.34042 3.62667C6.60486 3.51333 6.86931 3.55111 7.13375 3.74L11.0438 6.12L9.28708 6.91333L5.83042 3.85333ZM2.31708 9.35C2.39264 9.27444 2.46819 9.23667 2.54375 9.23667L5.09375 10.1433C5.28264 10.1811 5.45264 10.1622 5.60375 10.0867L15.4071 5.72333C15.596 5.64778 15.7849 5.64778 15.9738 5.72333C16.1626 5.79889 16.2949 5.92167 16.3704 6.09167C16.446 6.26167 16.4554 6.44111 16.3988 6.63C16.3421 6.81889 16.2193 6.95111 16.0304 7.02667L6.85042 11.05C6.35931 11.2767 5.84931 11.3711 5.32042 11.3333C4.79153 11.2956 4.31931 11.1256 3.90375 10.8233L2.43042 9.74667C2.35486 9.70889 2.30764 9.64278 2.28875 9.54833C2.26986 9.45389 2.27931 9.38778 2.31708 9.35ZM17.8438 16.2633C17.8438 16.49 17.7776 16.6694 17.6454 16.8017C17.5132 16.9339 17.3338 17 17.1071 17H1.58042C1.35375 17 1.17431 16.9339 1.04208 16.8017C0.909861 16.6694 0.84375 16.4994 0.84375 16.2917C0.84375 16.0839 0.909861 15.9139 1.04208 15.7817C1.17431 15.6494 1.35375 15.5833 1.58042 15.5833H17.1638C17.3526 15.5833 17.5132 15.6494 17.6454 15.7817C17.7776 15.9139 17.8438 16.0744 17.8438 16.2633Z"
+                                    fill="#232323" />
+                              </g>
+                              <defs>
+                                 <clipPath id="clip0_9_148">
+                                    <rect width="17" height="17" fill="white" transform="matrix(1 0 0 -1 0.84375 17)" />
+                                 </clipPath>
+                              </defs>
+                           </svg>
+                        </span>
+                        Flight Price Predictor
+                     </a>
+                  </li>
+                  <li>
+                     <a href="" class="text-base text-[#232323] flex gap-1 items-center hover:text-blue-900">
+                        <span>
+                           <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#clip0_9_152)">
+                                 <path
+                                    d="M14.2015 4.24998H9.95151C9.27151 4.24998 8.64818 4.41998 8.08151 4.75998C7.51484 5.09998 7.0804 5.5722 6.77818 6.17665C6.36262 5.83665 5.87151 5.66665 5.30484 5.66665C4.62484 5.66665 4.03929 5.9122 3.54818 6.40331C3.05707 6.89442 2.81151 7.47998 2.81151 8.15998C2.84929 8.53776 2.94373 8.87776 3.09484 9.17998H2.13151V2.09665C2.13151 1.90776 2.0654 1.7472 1.93318 1.61498C1.80095 1.48276 1.63095 1.41665 1.42318 1.41665C1.2154 1.41665 1.0454 1.48276 0.913177 1.61498C0.780955 1.7472 0.714844 1.90776 0.714844 2.09665V14.8466C0.714844 15.0733 0.780955 15.2528 0.913177 15.385C1.0454 15.5172 1.2154 15.5833 1.42318 15.5833C1.63095 15.5833 1.80095 15.5172 1.93318 15.385C2.0654 15.2528 2.13151 15.0733 2.13151 14.8466V13.43H16.2982V14.8466C16.2982 15.0733 16.3643 15.2528 16.4965 15.385C16.6287 15.5172 16.7987 15.5833 17.0065 15.5833C17.2143 15.5833 17.3843 15.5172 17.5165 15.385C17.6487 15.2528 17.7148 15.0733 17.7148 14.8466V7.76331C17.7148 7.15887 17.5543 6.58276 17.2332 6.03498C16.9121 5.4872 16.4776 5.05276 15.9298 4.73165C15.3821 4.41053 14.806 4.24998 14.2015 4.24998ZM7.79818 7.76331C7.79818 7.19665 8.00596 6.70553 8.42151 6.28998C8.83707 5.87442 9.34707 5.66665 9.95151 5.66665H14.2015C14.7682 5.66665 15.2593 5.87442 15.6748 6.28998C16.0904 6.70553 16.2982 7.21554 16.2982 7.81998V9.17998H7.79818V7.76331ZM4.28484 8.15998C4.28484 7.85776 4.37929 7.60276 4.56818 7.39498C4.75707 7.1872 5.00262 7.08331 5.30484 7.08331C5.60707 7.08331 5.86207 7.1872 6.06984 7.39498C6.27762 7.60276 6.38151 7.85776 6.38151 8.15998C6.38151 8.4622 6.27762 8.7172 6.06984 8.92498C5.86207 9.13276 5.60707 9.2272 5.30484 9.20831C5.00262 9.18942 4.74762 9.08554 4.53984 8.89665C4.33207 8.70776 4.24707 8.4622 4.28484 8.15998ZM2.13151 12.0133V10.5966H16.2982V12.0133H2.13151Z"
+                                    fill="#232323" />
+                              </g>
+                              <defs>
+                                 <clipPath id="clip0_9_152">
+                                    <rect width="17" height="17" fill="white"
+                                       transform="matrix(1 0 0 -1 0.714844 17)" />
+                                 </clipPath>
+                              </defs>
+                           </svg>
+
+                        </span>
+                        HotelBot
+                     </a>
+                  </li>
+               </ul>
+               <!-- header-nav--end -->
+
+               <!-- header-curency -->
+               <div
+                  class="border border-[#BAD5FF] hidden lg:flex p-2 gap-2 uppercase text-[#23404F] font-semibold rounded-4xl">
+                  <img src="./src/imgs/country.svg" class="w-6.5 h-6.5 rounded-full object-cover shrink-0"
+                     alt="country-img">
+
+                  <span>
+                     USD
+                  </span>
+               </div>
+               <!-- header-curency--end -->
+
+               <!-- menu-bar -->
+               <button type="button" class="bg-transparent lg:hidden border-0 w-6 h-6 text-2xl">
+                  <i class="ri-menu-2-line"></i>
+               </button>
+               <!-- menu-bar--end -->
+            </div>
+            <!-- header-right--end -->
+         </div>
+      </div>
+   </header>
+   <!-- header-section--end -->
+
+   <!-- hero-section -->
+   <section class="bg-blue-900 pt-8 pb-22">
+      <div class="container px-3 mx-auto">
+         <div class="">
+            <div class="w-full md:w-8/12 lg:12 xl:w-8/12 mx-auto text-center">
+               <span class="text-white font-bold text-base mb-2  block lg:text-2xl lg:mb-4">Flight Price
+                  Predictor</span>
+               <h1 class="text-white text-[26px] md:text-3xl lg:text-[54px] font-bold mb-4  lg:mb-6">
+                  Know when to book flights, without overpaying
+               </h1>
+               <div class="flex -mx-2 items-stretch mb-2.5 lg:mb-10">
+                  <div class="w-3/12 px-2 lg:px-3">
+                     <div
+                        class="border border-[#D1D5DB] rounded-md p-1 flex flex-col gap-0.5 text-[9px] font-semibold md:text-base items-center text-white h-full justify-center">
+                        <span>
+                           <svg class="w-3.5 h-3.5 md:w-6 md:h-6" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M21.577 5.22811C21.8509 4.40616 21.7997 3.77262 21.4227 3.32721C20.9775 2.95041 20.3438 2.89921 19.5218 3.17273C18.6998 3.44674 17.9634 3.90906 17.3126 4.55979L15.2579 6.6149L6.71763 4.57279C6.58061 4.52992 6.45219 4.56416 6.3324 4.67545L4.68842 6.31948C4.59436 6.41377 4.55572 6.52934 4.57291 6.66632C4.59859 6.80348 4.67142 6.9061 4.79125 6.97466L11.3154 10.5581L7.98906 13.8847L5.49757 13.2042C5.48047 13.1955 5.44633 13.1912 5.39492 13.1912C5.27499 13.1912 5.17662 13.2297 5.09952 13.3068L3.86668 14.5526C3.78108 14.6551 3.74262 14.7622 3.75117 14.8734C3.76817 15.0104 3.82381 15.109 3.9181 15.169L7.15441 17.5963L9.58162 20.8328C9.65872 20.9272 9.76151 20.9826 9.88993 21H9.91562C10.0355 21 10.1339 20.9615 10.211 20.8846L11.4438 19.6518C11.5551 19.5317 11.5894 19.399 11.5466 19.2535L10.8659 16.7617L14.1922 13.4349L17.7756 19.96C17.8268 20.0713 17.9167 20.1398 18.0452 20.1655C18.0708 20.1741 18.1008 20.1783 18.1351 20.1783C18.2377 20.1783 18.3191 20.1525 18.379 20.1013L20.0232 18.8683C20.1685 18.7485 20.2199 18.6074 20.1773 18.4446L18.1225 9.50536L20.1902 7.43757C20.8408 6.78657 21.303 6.05005 21.577 5.22811Z"
+                                 fill="white" />
+                           </svg>
+                        </span>
+                        Flights
+                     </div>
+                  </div>
+                  <div class="w-3/12 px-2 lg:px-3">
+                     <div
+                        class="border border-[#D1D5DB] rounded-md p-1 flex flex-col gap-0.5 text-[9px] font-semibold md:text-base items-center text-white h-full justify-center">
+                        <span>
+                           <svg class="w-3.5 h-3.5 md:w-6 md:h-6" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <g clip-path="url(#clip0_569_425)">
+                                 <path
+                                    d="M2.6126 13.3615V5.85308C2.6126 5.33333 2.19125 4.91199 1.67156 4.91199C1.15181 4.91199 0.730469 5.33333 0.730469 5.85308V18.1468C0.730469 18.6666 1.15181 19.0879 1.67156 19.0879C2.1913 19.0879 2.6126 18.6666 2.6126 18.1468V16.3838L21.8884 16.3385V18.1015C21.8884 18.6213 22.3097 19.0426 22.8294 19.0426C23.3491 19.0426 23.7705 18.6212 23.7705 18.1015V16.3384V13.8768V13.3161L2.6126 13.3615Z"
+                                    fill="white" />
+                                 <path
+                                    d="M23.7709 12.5553H9.46484V9.00929C9.46484 7.98204 10.2976 7.14929 11.3248 7.14929H20.0159C22.0897 7.14929 23.7709 8.83044 23.7709 10.9043V12.5553Z"
+                                    fill="white" />
+                                 <path
+                                    d="M6.11612 12.1502C7.38514 12.1502 8.41388 11.1215 8.41388 9.85245C8.41388 8.58343 7.38514 7.55469 6.11612 7.55469C4.8471 7.55469 3.81836 8.58343 3.81836 9.85245C3.81836 11.1215 4.8471 12.1502 6.11612 12.1502Z"
+                                    fill="white" />
+                              </g>
+                              <defs>
+                                 <clipPath id="clip0_569_425">
+                                    <rect width="24" height="24" fill="white" transform="translate(0.25)" />
+                                 </clipPath>
+                              </defs>
+                           </svg>
+
+                        </span>
+                        Hotel
+                     </div>
+                  </div>
+                  <div class="w-3/12 px-2 lg:px-3">
+                     <div
+                        class="border border-[#D1D5DB] rounded-md p-1 flex flex-col gap-0.5 text-[9px] font-semibold md:text-base items-center text-white h-full justify-center">
+                        <span>
+                           <svg class="w-3.5 h-3.5 md:w-6 md:h-6" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M22.5303 12.1943C22.0081 11.7209 20.6272 12.1943 20.0238 12.7414L18.5385 14.0881L14.2449 13.0781C13.6415 12.8887 13.0149 13.0044 12.6203 13.3727L11.75 14.1618L16.1944 16.2239C16.1132 16.2975 15.8811 16.508 15.707 16.6658C15.591 16.771 15.475 16.8867 15.3705 17.0235L14.419 18.1387L12.8408 18.1072L12.1445 18.749L13.1425 19.6538L14.3493 20.748L15.3473 21.6528L16.0552 21.011L16.0204 19.5907L17.2504 18.7279C17.3781 18.6332 17.5173 18.528 17.6449 18.4228C17.819 18.265 18.0627 18.0546 18.1323 17.9809L20.3835 22L21.2539 21.2109C21.66 20.8427 21.7761 20.2851 21.5788 19.738L20.4648 15.8451L21.9385 14.4669C22.5303 13.9303 23.0641 12.6678 22.5303 12.1943Z"
+                                 fill="white" />
+                              <path
+                                 d="M17.9253 3.14375H16.0984V2.57188C16.0984 2.25302 15.8315 2 15.4902 2C15.151 2 14.8994 2.25302 14.8994 2.57188V3.14375H11.8582V2.57188C11.8582 2.25302 11.5891 2 11.25 2C10.9109 2 10.6418 2.25302 10.6418 2.57188V3.14375H7.5984V2.57188C7.5984 2.25302 7.33147 2 6.99015 2C6.65103 2 6.40161 2.25302 6.40161 2.57188V3.14375H4.57472C3.57265 3.14375 2.75 3.90074 2.75 4.85933V16.2844C2.75 17.2265 3.57265 18 4.57472 18H11.6876C11.7248 17.8663 11.7992 17.7429 11.9086 17.638L12.5956 16.9797C12.6546 16.9241 12.7203 16.8768 12.7925 16.8398H4.57472C4.23559 16.8398 3.96649 16.5868 3.96649 16.2659V8.27616H18.5335V12.5179L18.5795 12.5281L19.6909 11.4831C19.7106 11.4646 19.7303 11.4482 19.75 11.4317V4.85933C19.75 3.90074 18.9273 3.14375 17.9253 3.14375Z"
+                                 fill="white" />
+                           </svg>
+
+                        </span>
+                        Flight Price Predictor
+                     </div>
+                  </div>
+                  <div class="w-3/12 px-2 lg:px-3">
+                     <div
+                        class="border border-[#D1D5DB] rounded-md p-1 flex flex-col gap-0.5 text-[9px] font-semibold md:text-base items-center text-white h-full justify-center">
+                        <span>
+                           <svg class="w-3.5 h-3.5 md:w-6 md:h-6" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M21.2749 2.81103C20.8108 2.35199 20.2577 1.99284 19.6495 1.75571C19.0414 1.51858 18.3911 1.4085 17.7388 1.43224C16.4842 1.47809 15.2947 2.0018 14.4137 2.89612C13.5328 3.79044 13.027 4.98772 13 6.24279C12.9824 7.30681 13.3195 8.34643 13.958 9.19774C14.0481 9.33214 16.2336 12.3717 16.9045 13.3019C17.0129 13.4486 17.154 13.5681 17.3167 13.6506C17.4793 13.7332 17.6591 13.7766 17.8415 13.7774C18.0239 13.7782 18.204 13.7363 18.3674 13.6551C18.5307 13.574 18.6729 13.4558 18.7825 13.3099C18.7825 13.3099 21.6741 9.35888 21.7612 9.24755C22.399 8.39876 22.7458 7.36676 22.75 6.30504C22.7522 5.6533 22.6227 5.00783 22.3692 4.40741C22.1158 3.80698 21.7435 3.26398 21.2749 2.81103ZM17.875 8.24999C17.5042 8.24999 17.1416 8.14002 16.8333 7.93399C16.525 7.72797 16.2846 7.43513 16.1427 7.09252C16.0008 6.74991 15.9637 6.37291 16.036 6.00919C16.1084 5.64548 16.287 5.31139 16.5492 5.04916C16.8114 4.78694 17.1455 4.60836 17.5092 4.53602C17.8729 4.46367 18.2499 4.5008 18.5925 4.64271C18.9351 4.78463 19.228 5.02495 19.434 5.33329C19.64 5.64164 19.75 6.00415 19.75 6.37499C19.7495 6.87211 19.5518 7.34872 19.2003 7.70024C18.8487 8.05176 18.3721 8.24947 17.875 8.24999ZM5.5 20.625C5.5 20.9958 5.39003 21.3583 5.18401 21.6667C4.97798 21.975 4.68514 22.2153 4.34253 22.3573C3.99992 22.4992 3.62292 22.5363 3.25921 22.464C2.89549 22.3916 2.5614 22.213 2.29918 21.9508C2.03695 21.6886 1.85838 21.3545 1.78603 20.9908C1.71368 20.6271 1.75081 20.2501 1.89273 19.9075C2.03464 19.5648 2.27496 19.272 2.58331 19.066C2.89165 18.86 3.25416 18.75 3.625 18.75C4.1221 18.7506 4.59868 18.9483 4.95018 19.2998C5.30169 19.6513 5.49942 20.1279 5.5 20.625ZM13.75 18.75C13.7494 19.3465 13.5121 19.9184 13.0903 20.3403C12.6685 20.7621 12.0965 20.9993 11.5 21H6.9621C7.0363 20.4938 6.97793 19.9769 6.79268 19.5H11.5C11.6989 19.5 11.8897 19.421 12.0303 19.2803C12.171 19.1397 12.25 18.9489 12.25 18.75C12.25 18.5511 12.171 18.3603 12.0303 18.2197C11.8897 18.079 11.6989 18 11.5 18H8.5C7.90346 17.9993 7.33155 17.7621 6.90973 17.3403C6.48791 16.9184 6.25065 16.3465 6.25 15.75V15C6.25065 14.4035 6.48791 13.8315 6.90973 13.4097C7.33155 12.9879 7.90346 12.7506 8.5 12.75H14.659C15.1378 13.4009 15.4717 13.9099 15.7531 14.25H8.5C8.30117 14.2502 8.11055 14.3293 7.96996 14.4699C7.82936 14.6105 7.75026 14.8012 7.75 15V15.75C7.75026 15.9488 7.82936 16.1394 7.96996 16.28C8.11055 16.4206 8.30117 16.4997 8.5 16.5H11.5C12.0965 16.5006 12.6685 16.7379 13.0903 17.1597C13.5121 17.5815 13.7494 18.1535 13.75 18.75Z"
+                                 fill="white" />
+                           </svg>
+
+                        </span>
+                        Road Trip Planner
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+            <div class="w-full bg-white rounded-2xl py-6 px-6">
+               <div class="flex justify-between mb-6">
+                  <!-- type-of-trip -->
+                  <div class="flex gap-3">
+                     <input type="radio" id="oneWay" aria-label="One Way" class="btn btn-sm" name="typeTrip" checked />
+                     <input type="radio" id="roundTrip" aria-label="Round Trip" class="btn btn-sm" name="typeTrip" />
+                  </div>
+                  <!-- type-of-trip--end -->
+
+                  <!-- trip-info -->
+                  <div class="flex gap-3">
+                     <!-- person-of-trip -->
+                     <div class="block relative" id="personInfo">
+                        <button
+                           class="csPerson px-2.5 py-1.5 flex items-center gap-2 bg-[#E8F3FF] rounded-md text-sm cursor-pointer"
+                           popovertarget="popover-1">
+                           <div>
+                              <span class="travelerCount">1</span>
+                              <span class="travelerText">Traveller</span>
+                           </div>
+                           <span class="icon">
+                              <i class="ri-arrow-down-s-line"></i>
+                           </span>
+                        </button>
+                        <div class="bg-white rounded-xl py-3 min-w-[260px] shadow-black/25 shadow-2xl dropdown menu"
+                           popover id="popover-1">
+                           <ul>
+                              <li>
+                                 <div
+                                    class="flex justify-between items-center gap-2 px-2 py-2 border-b border-primary/5 active:!bg-white">
+                                    <div class="block">
+                                       <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Adults</h6>
+                                       <span class="text-xs text-[#3E4957] leading-3">12 years & above</span>
+                                    </div>
+
+                                    <div class="flex">
+                                       <button type="button"
+                                          class="decriment w-6 h-6 cursor-pointer border-2 border-primary text-primary text-base rounded-full inline-flex items-center justify-center "><i
+                                             class="ri-subtract-line"></i></button>
+                                       <input type="text" placeholder="0" id="adultsInput"
+                                          class="w-10 text-sm font-medium text-[#3e4957] text-center">
+                                       <button type="button"
+                                          class="incriment w-6 h-6 cursor-pointer border-2 border-primary text-primary text-base rounded-full inline-flex items-center justify-center "><i
+                                             class="ri-add-line"></i></button>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div
+                                    class="flex justify-between items-center gap-2 px-2 py-2 border-b border-primary/5 active:!bg-white">
+                                    <div class="block">
+                                       <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Children</h6>
+                                       <span class="text-xs text-[#3E4957] leading-3">From 5 to under 12</span>
+                                    </div>
+
+                                    <div class="flex">
+                                       <button type="button"
+                                          class="decriment w-6 h-6 cursor-pointer border-2 border-primary text-primary text-base rounded-full inline-flex items-center justify-center "><i
+                                             class="ri-subtract-line"></i></button>
+                                       <input type="text" placeholder="0" id="children"
+                                          class="w-10 text-sm font-medium text-[#3e4957] text-center">
+                                       <button type="button"
+                                          class="incriment w-6 h-6 cursor-pointer border-2 border-primary text-primary text-base rounded-full inline-flex items-center justify-center "><i
+                                             class="ri-add-line"></i></button>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="flex justify-between items-center gap-2 px-2 py-2  active:!bg-white">
+                                    <div class="block">
+                                       <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Kids</h6>
+                                       <span class="text-xs text-[#3E4957] leading-3">From 2 to under 5</span>
+                                    </div>
+
+                                    <div class="flex">
+                                       <button type="button"
+                                          class="decriment w-6 h-6 cursor-pointer border-2 border-primary text-primary text-base rounded-full inline-flex items-center justify-center "><i
+                                             class="ri-subtract-line"></i></button>
+                                       <input type="text" placeholder="0" id="kids"
+                                          class="w-10 text-sm font-medium text-[#3e4957] text-center">
+                                       <button type="button"
+                                          class="incriment w-6 h-6 cursor-pointer border-2 border-primary text-primary text-base rounded-full inline-flex items-center justify-center "><i
+                                             class="ri-add-line"></i></button>
+                                    </div>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- person-of-trip--end -->
+
+                     <!-- economy -->
+                     <div class="block relative" id="economy">
+                        <button type="button" popovertarget="popover-2"
+                           class="cSelectValue px-2.5 py-1.5 flex items-center gap-2 bg-[#E8F3FF] rounded-md text-sm cursor-pointer"">
+                           <span class=" text">Economy</span>
+                           <span class="icon">
+                              <i class="ri-arrow-down-s-line"></i>
+                           </span>
+                        </button>
+                        <div
+                           class="dropdown menu bg-white rounded-xl py-3 min-w-[220px] shadow-black/25 shadow-2xl px-0"
+                           popover id="popover-2">
+                           <ul>
+                              <li
+                                 class="py-2 px-4 text-sm font-medium cursor-pointer hover:bg-primary/10 transition-all">
+                                 Economy</li>
+                              <li
+                                 class="py-2 px-4 text-sm font-medium cursor-pointer hover:bg-primary/10 transition-all">
+                                 Premium
+                                 Economy</li>
+                              <li
+                                 class="py-2 px-4 text-sm font-medium cursor-pointer hover:bg-primary/10 transition-all">
+                                 Business</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- economy--end -->
+                  </div>
+                  <!-- trip-info--end -->
+
+               </div>
+               <div class="flex w-full mb-6">
+                  <div class="grow flex -mx-2">
+                     <div class="px-2 w-1/4">
+                        <div class="block">
+                           <button type="button"
+                              class="bg-white rounded-md border border-[#E2E8F0] py-2 px-2 w-full text-start"
+                              popovertarget="popover-3">
+                              <span class="placeText">Dhaka</span>
+                           </button>
+                           <div class="bg-white rounded-xl py-3 min-w-[260px] shadow-black/25 shadow-2xl dropdown menu"
+                              popover id="popover-3">
+                              <ul>
+                                 <li>
+                                    <div
+                                       class="flex justify-between items-center gap-2 px-2 py-2 border-b border-primary/5 active:!bg-white">
+                                       <div class="block grow">
+                                          <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Dhaka</h6>
+                                          <span class="text-xs text-[#3E4957] leading-3">Bangladesh Center
+                                             Capital</span>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div
+                                       class="flex justify-between items-center gap-2 px-2 py-2 border-b border-primary/5 active:!bg-white">
+                                       <div class="block grow">
+                                          <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Cox's Bazar
+                                          </h6>
+                                          <span class="text-xs text-[#3E4957] leading-3">Bangladesh Coxe's Bazar
+                                             ari</span>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div
+                                       class="flex justify-between items-center gap-2 px-2 py-2 border-b border-primary/5 active:!bg-white">
+                                       <div class="block grow">
+                                          <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Barishal</h6>
+                                          <span class="text-xs text-[#3E4957] leading-3">Bangladesh Barishal Central
+                                             city</span>
+                                       </div>
+                                    </div>
+                                 </li>
+
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="px-2 w-1/4">
+                        <div class="block">
+                           <button type="button"
+                              class="bg-white rounded-md border border-[#E2E8F0] py-2 px-2 w-full text-start"
+                              popovertarget="popover-4">
+                              <span class="placeText">Jessore</span>
+                           </button>
+                           <div class="bg-white rounded-xl py-3 min-w-[260px] shadow-black/25 shadow-2xl dropdown menu"
+                              popover id="popover-4">
+                              <ul>
+                                 <li>
+                                    <div
+                                       class="flex justify-between items-center gap-2 px-2 py-2 border-b border-primary/5 active:!bg-white">
+                                       <div class="block grow">
+                                          <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Dhaka</h6>
+                                          <span class="text-xs text-[#3E4957] leading-3">Bangladesh Center
+                                             Capital</span>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div
+                                       class="flex justify-between items-center gap-2 px-2 py-2 border-b border-primary/5 active:!bg-white">
+                                       <div class="block grow">
+                                          <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Cox's Bazar
+                                          </h6>
+                                          <span class="text-xs text-[#3E4957] leading-3">Bangladesh Coxe's Bazar
+                                             ari</span>
+                                       </div>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div
+                                       class="flex justify-between items-center gap-2 px-2 py-2 border-b border-primary/5 active:!bg-white">
+                                       <div class="block grow">
+                                          <h6 class="text-sm text-[#3e4957] mb-0 leading-4 font-semibold">Barishal</h6>
+                                          <span class="text-xs text-[#3E4957] leading-3">Bangladesh Barishal Central
+                                             city</span>
+                                       </div>
+                                    </div>
+                                 </li>
+
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="flex items-center px-2 w-2/4 -mx-2 relative">
+                        <input type="text" id="dateRangePicker" class="opacity-0 h-full absolute left-0 top-0 w-full"
+                           placeholder="Select your dates" />
+
+                        <!-- Check-in -->
+                        <div class="w-2/4 px-2">
+                           <label for="dateRangePicker"
+                              class="bg-white rounded-md border border-[#E2E8F0] py-2 px-2 w-full text-start block">
+                              <span id="checkInDate" class="text-base text-blue-600 font-semibold">Check-in</span>
+                           </label>
+                        </div>
+
+                        <!-- Check-out -->
+                        <div class="w-2/4 px-2 hidden" id="checkOutBox">
+                           <div class="bg-white rounded-md border border-[#E2E8F0] py-2 px-2 w-full text-start block">
+                              <span id="checkOutDate" class="text-base text-blue-600 font-semibold">Check-out</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <button type="button"
+                     class="w-10.5 h-10.5 bg-primary inline-flex justify-center items-center text-white rounded-md cursor-pointer shrink-0">
+                     <i class="ri-search-line"></i>
+                  </button>
+               </div>
+               <div class="flex gap-4">
+                  <div class="flex gap-1 items-center">
+                     <input type="radio" id="student" name="radio-4" class="radio radio-primary radio-xs"
+                        checked="checked" />
+                     <label for="student" class="cursor-pointer text-sm font-medium">Student fare</label>
+                  </div>
+                  <div class="flex gap-1 items-center">
+
+                     <input type="radio" id="regular" name="radio-4" class="radio radio-primary radio-xs" />
+                     <label for="regular" class="cursor-pointer text-sm font-medium">Regular fare</label>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- hero-section--end -->
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+   <script>
+
+      let fpInstance;
+
+      function initFlatpickr(monthCount = 1, mode = "single") {
+         if (fpInstance) fpInstance.destroy();
+
+         fpInstance = flatpickr("#dateRangePicker", {
+            mode: mode,
+            dateFormat: "d-m-Y",
+            showMonths: monthCount,
+            minDate: "today",
+            onChange: function (selectedDates) {
+               const checkIn = selectedDates[0];
+               const checkOut = selectedDates[1];
+
+               document.getElementById("checkInDate").innerText = checkIn
+                  ? flatpickr.formatDate(checkIn, "d-m-Y")
+                  : "Check-in";
+
+               document.getElementById("checkOutDate").innerText =
+                  mode === "range" && checkOut
+                     ? flatpickr.formatDate(checkOut, "d-m-Y")
+                     : "Check-out";
+            },
+         });
+      }
+      initFlatpickr(1, "single");
+      document.getElementById("oneWay").addEventListener("change", () => {
+         initFlatpickr(1, "single");
+      });
+
+      document.getElementById("roundTrip").addEventListener("change", () => {
+         initFlatpickr(2, "range");
+      });
+
+      const checkOutBox = document.getElementById("checkOutBox");
+      document.getElementById("oneWay").addEventListener("change", () => {
+         initFlatpickr(1, "single");
+         checkOutBox.classList.add("hidden");
+      });
+      document.getElementById("roundTrip").addEventListener("change", () => {
+         initFlatpickr(2, "range");
+         checkOutBox.classList.remove("hidden");
+      });
+   </script>
+</body>
+
+</html>
